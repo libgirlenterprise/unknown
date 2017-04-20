@@ -12,7 +12,8 @@
   :author ""
   :license ""
   :depends-on (:smcl
-               :ningle)
+               :ningle
+	       :clack)
   :components ((:module "src"
                 :components
                 ((:file "unknown"))))

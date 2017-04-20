@@ -2,9 +2,12 @@
 (in-package :cl-user)
 
 (defpackage com.libgirl.unknown
-  (:use :cl-user :com.libgirl.smcl :ningle))
+  (:use :cl :com.libgirl.smcl :ningle :clack)
+  (:export :unknown))
 
-(in-package :com.libgirl.unkown)
+(in-package :com.libgirl.unknown)
+
+(defvar *unknown-generator-app*)
 
 ;; (smcl-thread-run '((:x nil
 ;; 		    (:0
@@ -41,11 +44,12 @@
 ;; 		    ((:list-quote :defun :8)
 ;; 		     (:defun :f (:list-quote (:list-quote :3 (:list-quote :car :cdr)))))
 ;; 		    (:eq :p1 (:p2 (:e :p1) :1)))))
-		     
-(defvar *app* (make-instance 'ningle:unknown-generator))
 
-(setf (ningle:route *app* "/")
+(setf *unknown-generator-app*
+      (make-instance 'ningle:<app>))
+
+(setf (ningle:route *unknown-generator-app* "/")
       "Welcome to unknown!")
 
 (defun unknown ()
-  (clack:clackup *app*))
+  (clack:clackup *unknown-generator-app*))

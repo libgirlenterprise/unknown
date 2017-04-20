@@ -1,0 +1,22 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#| <Put a one-line description here>
+exec ros -Q -- $0 "$@"
+|#
+(progn ;;init forms
+  (ros:ensure-asdf)
+  #+quicklisp (ql:quickload '(unknown) :silent t)
+  )
+
+(defpackage :ros.script.unknown.3701572530
+  (:use :cl :com.libgirl.unknown))
+(in-package :ros.script.unknown.3701572530)
+
+(defun main (&rest argv)
+  (declare (ignorable argv))
+  (let ((clack-handler (unknown)))
+    (format t "EOF to stop server ~%~%")
+    (loop while (read-line *standard-input* nil))
+    (clack:stop clack-handler)))
+  
+;;; vim: set ft=lisp lisp:

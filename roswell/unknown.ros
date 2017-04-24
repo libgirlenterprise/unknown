@@ -5,8 +5,8 @@ exec ros -Q -- $0 "$@"
 |#
 (progn ;;init forms
   (ros:ensure-asdf)
-  #+quicklisp (ql:quickload '(unknown) :silent t)
-  )
+  #+quicklisp (ql:quickload '(unknown) :silent t))
+  
 
 (defpackage :ros.script.unknown.3701572530
   (:use :cl :com.libgirl.unknown))
@@ -14,10 +14,13 @@ exec ros -Q -- $0 "$@"
 
 (defun main (&rest argv)
   (declare (ignorable argv))
-  (let ((clack-handler (unknown)))
-    (format t "EOF to stop server ~%~%")
-    (loop while (read-line *standard-input* nil))
-    (smcl-thread-end)
-    (clack:stop clack-handler)))
+  (format t
+	  "clack-handler ~a~%~%"
+	  (unknown))
+  (format t "EOF to stop server ~%~%")
+  (loop while (read-line *standard-input* nil))
+  (format t
+	  "clack:stop return ~a~%~%"
+	  (unknown-stop)))
   
 ;;; vim: set ft=lisp lisp:

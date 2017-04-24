@@ -13,7 +13,8 @@
   :license ""
   :depends-on (:smcl
                :ningle
-	       :clack)
+	       :clack
+	       :decimals)
   :components ((:module "src"
                 :components
                 ((:file "unknown"))))

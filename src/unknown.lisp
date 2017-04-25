@@ -46,6 +46,12 @@
 					      36)
 				 :round-magnitude -10)))
 
+(setf (ningle:route *unknown-generator-app* "/one-to-36")
+      #'(lambda (params)
+	  (format nil
+		  "~a"
+		  (char-to-number-code (smcl-get-char)))))
+
 (setf (ningle:route *unknown-generator-app* "/step/:count")
       #'(lambda (params)
 	  (let ((step-count (parse-integer (cdr (assoc :count params))

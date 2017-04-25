@@ -11,7 +11,8 @@ http://localhost:5000/normalize     	-> get number from 0~1. currently it's 0/36
 http://localhost:5000/step/:count	-> replace :count with integer. After triggering this, Unknown Generator changes its state. You can get new unknown then.
 
 Start Server in terminal
-      unknown
+
+    unknown
 
 ## Installation
 get roswell https://github.com/roswell/roswell Then

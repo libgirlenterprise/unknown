@@ -2,7 +2,11 @@
 @title(API)
 
 @cl:with-package[name="com.libgirl.unknown-api"](
+@b(Class)
 @cl:doc(class unknown)
+Method of @b(unknown)
+
+
 @cl:doc(method next (unknown unknown) &optional (count 1) input-digit-list)
 @cl:doc(method copy (unknown unknown))
 )

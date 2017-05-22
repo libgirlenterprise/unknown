@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+  API &ndash; Unknown Pattern Generator
+</title>
+    <link rel="stylesheet" href="static/style.css"/>
+    
+  <link rel="stylesheet" href="static/highlight.css"/>
+  <script src="static/highlight.js"></script>
+  <style>
+   /* Highlight the current top-level TOC item, and hide the TOC of all other items */
+
+   .toc a[data-node="api"] {
+       /*color: #AD3108;*/
+   }
+
+   .toc ol {
+       display: none;
+   }
+
+   .toc li a[data-node="api"] {
+       font-weight: bold;
+   }
+
+   .toc li a[data-node="api"] + ol {
+       display: block;
+   }
+
+   .toc li a[data-node="api"] + ol li {
+       margin-left: 10px;
+   }
+  </style>
+
+  </head>
+  <body>
+    
+  <h1 class="doc-title">Unknown Pattern Generator</h1>
+  <article id="article" data-section="api">
+    <aside>
+      <ol class="toc"><li><a href="api.html" data-node="api">API</a></li></ol>
+    </aside>
+    <main class="codex-section">
+      <header>
+        <h2 class="section-title">API</h2>
+      </header>
+      <div class="content">
+        <p>
+<div class="codex-doc-node codex-operator codex-function"><code class="codex-name">get-hex-base-digit</code><code class="codex-lambda-list">nil</code><div class="codex-docstring"><ul><li>Get current hex base unknown digit by current state. A specific state always give the same digit.</li></ul></div></div>
+<div class="codex-doc-node codex-operator codex-function"><code class="codex-name">set-hex-base-digit</code><code class="codex-lambda-list">(digit-to-set)</code><div class="codex-docstring"><ul><li>Set <code class="codex-param">digit-to-set</code> into the generator which changes the current state.</li></ul></div></div>
+<div class="codex-doc-node codex-operator codex-function"><code class="codex-name">get-state</code><code class="codex-lambda-list">nil</code><div class="codex-docstring"><ul><li>Get current version and current state of the generator.</li></ul></div></div>
+<div class="codex-doc-node codex-operator codex-function"><code class="codex-name">set-state</code><code class="codex-lambda-list">(state-representation &amp;key (by-some-random nil) (by-libgirl-unknown-system nil))</code><div class="codex-docstring"><ul><li>Set the generator to the state by <code class="codex-param">state-representation</code>.</li><li>Set the state as a random state if <code class="codex-param">by-some-random</code> is <code>t</code>.</li><li>Set the state as a Libgirl system decided state if <code class="codex-param">by-libgirl-unknown-system</code> is <code>t</code>.</li><li>Error will be raised if both of above two are <code>t</code>.</li></ul></div></div>
+
+</p>
+      </div>
+    </main>
+  </article>
+  <footer>
+    <div class="info">
+      Created with <a href="https://github.com/CommonDoc/codex">Codex</a>.
+    </div>
+  </footer>
+  <script>
+   HighlightLisp.highlight_auto();
+  </script>
+
+  </body>
+</html>

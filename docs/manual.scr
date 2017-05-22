@@ -1,0 +1,9 @@
+@begin(section)
+@title(API)
+
+@cl:with-package[name="com.libgirl.unknown-api"](
+@cl:doc(class unknown)
+@cl:doc(method next (unknown unknown) &optional (count 1) input-digit-list)
+@cl:doc(method copy (unknown unknown))
+)
+@end(section)

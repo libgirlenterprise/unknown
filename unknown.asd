@@ -17,7 +17,8 @@
 	       :decimals)
   :components ((:module "src"
                 :components
-                ((:file "unknown"))))
+                ((:file "unknown")
+		 (:file "unknown-api"))))
   :description ""
   :long-description
   #.(with-open-file (stream (merge-pathnames

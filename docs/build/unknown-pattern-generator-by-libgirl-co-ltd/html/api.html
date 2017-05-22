@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+  API &ndash; Unknown Pattern Generator - by Libgirl Co., Ltd.
+</title>
+    <link rel="stylesheet" href="static/style.css"/>
+    
+  <link rel="stylesheet" href="static/highlight.css"/>
+  <script src="static/highlight.js"></script>
+  <style>
+   /* Highlight the current top-level TOC item, and hide the TOC of all other items */
+
+   .toc a[data-node="api"] {
+       /*color: #AD3108;*/
+   }
+
+   .toc ol {
+       display: none;
+   }
+
+   .toc li a[data-node="api"] {
+       font-weight: bold;
+   }
+
+   .toc li a[data-node="api"] + ol {
+       display: block;
+   }
+
+   .toc li a[data-node="api"] + ol li {
+       margin-left: 10px;
+   }
+  </style>
+
+  </head>
+  <body>
+    
+  <h1 class="doc-title">Unknown Pattern Generator - by Libgirl Co., Ltd.</h1>
+  <article id="article" data-section="api">
+    <aside>
+      <ol class="toc"><li><a href="api.html" data-node="api">API</a></li></ol>
+    </aside>
+    <main class="codex-section">
+      <header>
+        <h2 class="section-title">API</h2>
+      </header>
+      <div class="content">
+        <p>
+<div class="codex-doc-node codex-record codex-class"><code class="codex-name">unknown</code><div class="codex-docstring">An unknown digit generator as a statefull object. </div><ul class="codex-slot-list"></ul></div>
+<div class="codex-doc-node codex-operator codex-method"><code class="codex-name">next</code><code class="codex-lambda-list">((unknown unknown) &amp;optional (count 1) input-digit-list)</code><div class="codex-docstring"><p>Get next hex base unknown digit(s) counted by <code class="codex-param">count</code> and go to the next <code class="codex-param">count</code> -many further state. The same state always gives the same single digit.</p><p>If <code class="codex-param">input-digit-list</code> is present, </p><ul><li>after generating each unknown digit, each digit in <code class="codex-param">input-digit-list</code> is respectively consumed to change the state of <code class="codex-param">unknown</code>.</li><li>The same state with the same input always goes to the same next state.</li><li>If all <code class="codex-param">input-digit-list</code> is consumed and unknown digit generation is still going on, state change will continue without input inteference.</li><li>Surplus digits given in <code class="codex-param">input-digit-list</code> will be just discarded.</li></ul></div></div>
+<div class="codex-doc-node codex-operator codex-method"><code class="codex-name">copy</code><code class="codex-lambda-list">((unknown unknown))</code><div class="codex-docstring">Get a copy of <code class="codex-param">unknown</code> with the same state.</div></div>
+
+</p>
+      </div>
+    </main>
+  </article>
+  <footer>
+    <div class="info">
+      Created with <a href="https://github.com/CommonDoc/codex">Codex</a>.
+    </div>
+  </footer>
+  <script>
+   HighlightLisp.highlight_auto();
+  </script>
+
+  </body>
+</html>

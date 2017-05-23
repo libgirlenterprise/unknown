@@ -22,12 +22,23 @@
 	    (<= code 122))
        (- code 87)) ; former 10 are 0~9, so 87 means code - 97 + 10
       (t (error "character is not in number, alphabet, or #\-")))))
-	       
+	      
 ;; (defmacro get-char-form (form)
 ;;       #'(lambda (params)
 ;; 	  (format nil
 ;; 		  "~a"
 ;; 		  (smcl-get-char))))
+(defun raw-char ()
+  (smcl-run-steps)
+  (smcl-get-char))
+  
+(defun zero-to-36-char ()
+  (char-to-number-code (raw-char)))
+
+(defun normalize-char ()
+  (format-decimal-number (/ (zero-to-36-char)
+			    36)
+			 :round-magnitude -10))
 
 (setf *unknown-generator-app*
       (make-instance 'ningle:<app>))
@@ -39,6 +50,32 @@
 	  (format nil
 		  "~a"
 		  (smcl-get-char))))
+
+(setf (ningle:route *unknown-generator-app*
+		    "/next"
+		    :method :POST)
+      #'(lambda (params)
+	      (let ((data-count (parse-integer (cdr (assoc "count"
+							   params
+							   :test #'string=))
+					       :junk-allowed t))
+		    (data-type (cdr (assoc "data-type"
+					   params
+					   :test #'string=))))
+		(handler-case
+		    (format nil
+			    "~{~a~^, ~}"
+			    (loop for i from 1 to data-count
+			       collect (funcall (eval (read-from-string (format nil
+										"#'com.libgirl.unknown::~a-char"
+										data-type))))))
+		  (type-error (te)
+		    (format nil
+			    "Invalid request data-count parameter. Not an valid integer."))
+		  (undefined-function (uf)
+		    (format nil
+			    "Invalid request data-type parameter"))))))
+		      
 
 (setf (ningle:route *unknown-generator-app* "/normalize")
       #'(lambda (params)

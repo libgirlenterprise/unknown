@@ -12,7 +12,7 @@ http://localhost:5000/step/:count	-> replace :count with integer. After triggeri
 
 HTTP POST
 
-http://localhost:5000/next		-> with parameter "count=[:count]&data-type=[:data-type]", you can get next [:count] many unknown characters. Current valid :data-type include raw, zero-36, and normalize.
+http://localhost:5000/next		-> with parameter "count=[:count]&data-type=[:data-type]", you can get next [:count] many unknown characters separated by comma. Current valid :data-type include raw, zero-36, and normalize. 
 
 Start Server in terminal
 

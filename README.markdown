@@ -2,13 +2,17 @@
 Unknown Generator
 
 ## Usage
-web api
+HTTP GET
 
 http://localhost:5000/			-> get current character
 
 http://localhost:5000/normalize     	-> get number from 0~1. currently it's 0/36, 1/36,...,to 36/36 with 10 decimals
 
 http://localhost:5000/step/:count	-> replace :count with integer. After triggering this, Unknown Generator changes its state. You can get new unknown then.
+
+HTTP POST
+
+http://localhost:5000/next		-> with parameter "count=[:count]&data-type=[:data-type]", you can get next [:count] many unknown characters. Current valid :data-type include raw, zero-36, and normalize.
 
 Start Server in terminal
 

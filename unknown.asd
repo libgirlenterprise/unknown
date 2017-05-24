@@ -14,7 +14,8 @@
   :depends-on (:smcl
                :ningle
 	       :clack
-	       :decimals)
+	       :decimals
+	       :cl-utilities)
   :components ((:module "src"
                 :components
                 ((:file "unknown")

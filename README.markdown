@@ -18,7 +18,11 @@ Sample curl command
 
     curl --data "count=23&data-type=zero-to-36&input-digit-list=a,a,a,a,a,a,a,a,a,a,a,a" http://localhost:5000/next
 
-Start Server in terminal
+Sample response
+
+    25,1,10,10,21,18,28,29,36,26,30,24,29,14,10,10,10,10,10,10,10,10,29
+
+###Start Server in terminal
 
     unknown
 

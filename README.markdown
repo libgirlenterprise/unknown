@@ -2,7 +2,7 @@
 Unknown Generator
 
 ## Usage
-HTTP GET
+###HTTP GET
 
 http://localhost:5000/			-> get current character
 
@@ -10,9 +10,13 @@ http://localhost:5000/normalize     	-> get number from 0~1. currently it's 0/36
 
 http://localhost:5000/step/:count	-> replace :count with integer. After triggering this, Unknown Generator changes its state. You can get new unknown then.
 
-HTTP POST
+###HTTP POST
 
-http://localhost:5000/next		-> with parameter "count=[:count]&data-type=[:data-type]", you can get next [:count] many unknown characters separated by comma. Current valid :data-type include raw, zero-36, and normalize. 
+http://localhost:5000/next		-> with parameter "count=[:count]&data-type=[:data-type]&input-digit-list=[:input-digit-list]", you can get next [:count] many unknown characters separated by comma. Current valid :data-type include raw, zero-to-36, and normalize. :input-digit-list indicates each digit to input after getting an unknown digit. More than enough digits in input-digit-list will be ignored. If digits in input-digit-list is less than :count, the generator continues without input interference.
+
+Sample curl command
+
+    curl --data "count=23&data-type=zero-to-36&input-digit-list=a,a,a,a,a,a,a,a,a,a,a,a" http://localhost:5000/next
 
 Start Server in terminal
 

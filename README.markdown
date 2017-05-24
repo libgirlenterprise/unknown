@@ -39,11 +39,13 @@ add this in you bash initial file
 Then
 
     git clone https://shakascchen@bitbucket.org/shakascchen/unknown.git
-    ln -s unknown/ ~/.roswell/local-projects/unknown
-    cd unknown/roswell
+    cd ~/.roswell/local-projects
+    ln -s [cloned project directory] unknown
+    cd [cloned project directory]/roswell
     ros install unknown
 
 You should be able to run
+
     unknown 
 
 ## License

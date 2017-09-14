@@ -2,7 +2,7 @@
 (in-package :cl-user)
 
 (defpackage com.libgirl.unknown
-  (:use :cl :com.libgirl.smcl :ningle :clack :decimals)
+  (:use :cl :com.libgirl.smcl :ningle :clack :decimals :iterate)
   (:import-from :cl-utilities :split-sequence)
   (:export :unknown :unknown-stop))
 

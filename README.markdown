@@ -1,27 +1,28 @@
 # Unknown
-Unknown Generator
+Unknown Generator by using [Self-Modifying Common Lisp](https://github.com/libgirlenterprise/smcl).
 
 ## Usage
 ### HTTP GET
 
-- http://localhost:5000/			
-    Get the current character.
+- http://localhost:5000/  
+Get the current character.
 
-- http://localhost:5000/normalize     	
-    Get number from 0~1. currently it's 0/36, 1/36,...,to 36/36 with 10 decimals
+- http://localhost:5000/normalize  
+Get number from 0~1. currently it's 0/36, 1/36,...,to 36/36 with 10 decimals
 
-- http://localhost:5000/step/:count
-    Replace :count with integer. After triggering this, Unknown Generator changes its state. You can get new unknown then.
+- http://localhost:5000/step/:count  
+Replace :count with integer. After triggering this, Unknown Generator changes its state. You can get new unknown then.
 
 ### HTTP POST
 
-- http://localhost:5000/next	with parameters
-    - **count**
-        How many unknown characters separated by comma do you want to get.
-    - **data-type**
-        Current valid data-type include ``raw``, ``zero-to-36``, and ``normalize``.
-    - **input-digit-list**
-        Indicate each digit to input after getting an unknown digit. More than enough digits in input-digit-list will be ignored. If digits in input-digit-list is less than ``count``, the generator continues without input interference
+- http://localhost:5000/next  
+with parameters
+    - **count**  
+    How many unknown characters separated by comma do you want to get.
+    - **data-type**  
+    Current valid data-type include ``raw``, ``zero-to-36``, and ``normalize``.
+    - **input-digit-list**  
+    Indicate each digit to input after getting an unknown digit. More than enough digits in input-digit-list will be ignored. If digits in input-digit-list is less than ``count``, the generator continues without input interference
 
 - Sample curl command
     ```
